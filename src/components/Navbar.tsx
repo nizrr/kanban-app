@@ -1,10 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
+import { ModeToggle } from "@/components/ModeToggle"
 
 const Navbar = () => {
    return (
-      <div>
+      <div className="flex justify-between items-center py-3 bor">
          <Link
             href="/"
             className="text-2xl font-bold flex gap-2 items-center ">
@@ -16,6 +17,7 @@ const Navbar = () => {
             />
             Visuaally
          </Link>
+         <ModeToggle />
       </div>
    )
 }

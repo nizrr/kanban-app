@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const geistSans = Geist({
    variable: "--font-geist-sans",
@@ -15,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
    title: "Visuaally",
    description: "Visually Intuitive Project Management.",
+   icons: {
+      icon: "/image/logo.ico",
+   },
 }
 
 export default function RootLayout({
@@ -23,9 +27,16 @@ export default function RootLayout({
    children: React.ReactNode
 }>) {
    return (
-      <html lang="en">
+      <html
+         lang="en"
+         suppressHydrationWarning>
          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-            {children}
+            <ThemeProvider
+               attribute="class"
+               defaultTheme="system"
+               enableSystem>
+               {children}
+            </ThemeProvider>
          </body>
       </html>
    )
