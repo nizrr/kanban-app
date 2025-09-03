@@ -1,10 +1,9 @@
 import Navbar from "@/components/Navbar"
+import Sidebar from "@/components/Sidebar"
 
 export default function Home() {
    return (
       <div className="">
-         {/* <Navbar /> */}
-         {/* linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) */}
       </div>
    )
 }
